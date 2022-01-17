@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "ea422a7b-a33c-4fd4-8dad-dd289c398c4e",
+		"name": "iluvcoffee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "home page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "coffees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/coffees/flavors",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"coffees",
+						"flavors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
