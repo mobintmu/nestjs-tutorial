@@ -14,22 +14,25 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CoffeesController = void 0;
 const common_1 = require("@nestjs/common");
+const coffees_service_1 = require("./coffees.service");
 let CoffeesController = class CoffeesController {
+    constructor(coffeesService) {
+        this.coffeesService = coffeesService;
+    }
     findAll(paginationQuery) {
-        const { limit, offset } = paginationQuery;
-        return `This action returns all coffees. Limit ${limit}, offset: ${offset}`;
+        return this.coffeesService.findAll();
     }
     findOne(id) {
-        return `This action returns #${id} coffee`;
+        return this.coffeesService.findOne(id);
     }
     create(body) {
-        return body;
+        return this.coffeesService.create(body);
     }
     update(id, body) {
-        return `This action updates #${id} coffee`;
+        return this.coffeesService.update(id, body);
     }
     remove(id) {
-        return `This action removes #${id} coffee`;
+        return this.coffeesService.remove(id);
     }
 };
 __decorate([
@@ -69,7 +72,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CoffeesController.prototype, "remove", null);
 CoffeesController = __decorate([
-    (0, common_1.Controller)('coffees')
+    (0, common_1.Controller)('coffees'),
+    __metadata("design:paramtypes", [coffees_service_1.CoffeesService])
 ], CoffeesController);
 exports.CoffeesController = CoffeesController;
 //# sourceMappingURL=coffees.controller.js.map

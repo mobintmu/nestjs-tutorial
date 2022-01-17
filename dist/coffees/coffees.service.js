@@ -9,6 +9,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CoffeesService = void 0;
 const common_1 = require("@nestjs/common");
 let CoffeesService = class CoffeesService {
+    constructor() {
+        this.coffees = [
+            {
+                id: 1,
+                name: 'Shipwreck Roast',
+                brand: 'Buddy Brew',
+                flavors: ['chocolate', 'vanilla'],
+            },
+        ];
+    }
+    findAll() {
+        return this.coffees;
+    }
+    findOne(id) {
+        return this.coffees.find(item => item.id === +id);
+    }
+    create(createCoffeeDto) {
+        this.coffees.push(createCoffeeDto);
+    }
+    update(id, updateCoffeeDto) {
+        const existingCoffee = this.findOne(id);
+        if (existingCoffee) {
+        }
+    }
+    remove(id) {
+        const coffeeIndex = this.coffees.findIndex(item => item.id === +id);
+        if (coffeeIndex >= 0) {
+            this.coffees.splice(coffeeIndex, 1);
+        }
+    }
 };
 CoffeesService = __decorate([
     (0, common_1.Injectable)()
