@@ -28,6 +28,7 @@ let CoffeesController = class CoffeesController {
         return this.coffeesService.findOne(id);
     }
     create(createCoffeeDto) {
+        console.log(createCoffeeDto.flavors);
         return this.coffeesService.create(createCoffeeDto);
     }
     update(id, updateCoffeeDto) {

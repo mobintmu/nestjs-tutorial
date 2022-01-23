@@ -30,6 +30,7 @@ export class CoffeesController {
 
   @Post()
   create(@Body() createCoffeeDto : CreateCoffeeDto) {
+    console.log(createCoffeeDto.flavors)
     return this.coffeesService.create(createCoffeeDto );
   }
 
